@@ -1,5 +1,6 @@
 package com.example.tugaspertemuan10
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -15,6 +16,11 @@ class MainActivity : AppCompatActivity() {
 
         val adapterStudent = StudentAdapter(generateStudentData()) { student ->
             Toast.makeText(this@MainActivity, " ${student.name}", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this@MainActivity, DetailActivity::class.java)
+            intent.putExtra("name", student.name)
+            intent.putExtra("ipk", student.ipk)
+            intent.putExtra("image", student.imageResId)
+            startActivity(intent)
         }
 
         with(binding) {
