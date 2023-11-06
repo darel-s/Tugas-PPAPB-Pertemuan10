@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
     private fun generateStudentData(): List<Student> {
         return listOf(
             Student("Darriel Markerizal", "3.8", R.drawable.avatar_1),
-            Student("Yodhimas Geffananda", "3.7", R.drawable.avatar_2),
+            Student("Yodhimas Geffananda", "2.7", R.drawable.avatar_2),
             Student("Rizky Aziz", "3.6", R.drawable.avatar_3),
             Student("Wildan Dzaky", "3.5", R.drawable.avatar_4),
             Student("Nawal Rizky", "3.4", R.drawable.avatar_5)

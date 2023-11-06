@@ -39,6 +39,23 @@ class StudentAdapter (private val listStudents : List<Student>,
     }
 
     override fun onBindViewHolder(holder: StudentViewHolder, position: Int) {
+        val student = listStudents[position]
         holder.bind(listStudents[position])
+
+        val ipkTextView = student.ipk
+        val ipk = student.ipk.toDoubleOrNull()
+        if (ipk != null) {
+            when {
+                ipk >= 3.5 -> {
+                    holder.itemView.setBackgroundColor(holder.itemView.context.getColor(R.color.green))
+                }
+                ipk >= 3.0 -> {
+                    holder.itemView.setBackgroundColor(holder.itemView.context.getColor(R.color.yellow))
+                }
+                else -> {
+                    holder.itemView.setBackgroundColor(holder.itemView.context.getColor(R.color.red))
+                }
+            }
+        }
     }
 }
